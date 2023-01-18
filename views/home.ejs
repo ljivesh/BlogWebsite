@@ -1,0 +1,16 @@
+<%- include('partials/header'); -%>
+<h1>Home</h1>
+<p><%=homeContent%></p>
+<% posts.forEach( (post) => { %>
+    <form action="/post" method="post">
+        <div class="truncate">
+            <h2> 
+                <button type="submit" name="postId" value="<%=post._id%>" class="link-button">
+                    <%=post.title%>
+                </button> 
+            </h2>
+            <p> <%= post.content %> </p>
+        </div>
+    </form>
+<% }); %>
+<%- include('partials/footer'); -%>
